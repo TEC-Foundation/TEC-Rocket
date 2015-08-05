@@ -55,27 +55,7 @@ void setup() {
     Serial.println("Could not find a valid BMP085 sensor, check wiring!");
     while (1) {}
   }
-  
-  /*
-  Serial.print("Initializing SD card...");
-  pinMode(10,OUTPUT);
-  if (!SD.begin(chipSelect)) {
-    Serial.println("Card failed or not present");
-    while (1) {}
-  }
-  Serial.println("card initialized.");
-  
-  Serial.print("Calibrating altitude sensor...");
-  long pressureSum = 0;
-  for (int i = 0; i<100; i++) {
-    pressureSum += bmp.readPressure();
-  }
-  startPressure = pressureSum/100;
-  Serial.println("Current altitude is now 0");
-  */
 }
-
-
 
 void loop() {
   accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
